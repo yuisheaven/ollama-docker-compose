@@ -1,0 +1,1 @@
+docker exec -it ollama ollama run gemma:2b-instruct

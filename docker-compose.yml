@@ -1,0 +1,36 @@
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    environment:
+      - "OLLAMA_ORIGINS=chrome-extension://eanggfilgoajaocelnaflolkadkeghjp" # HARPA AI
+      # - "OLLAMA_ORIGINS=*" # Allow any connection
+    restart: unless-stopped
+    deploy: # should only be used if an Nvidia GPU is available
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    volumes:
+      - ollama:/root/.ollama # docker volume is a bit better for performance, but local folder is also possible without too much difference
+    ports:
+      - "11434:11434"
+    tty: true
+  
+  open-ai-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-ai-webui
+    environment:
+      - OLLAMA_API_BASE_URL=http://localhost:11434
+    volumes:
+      - open-ai-webui:/app/backend/data
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+
+
+volumes:
+  ollama:
+  open-ai-webui:
