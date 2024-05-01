@@ -1,4 +1,4 @@
-# Setting up Ollama with llama3, an open-webui for Chat-GPT like experience as Continue.Dev as Visual Studio Code Extension (local and free Github Copilot alternative)
+# Setting up a local Chat-GPT like experience (with Ollama and Open-Webui)
 
 ## Prerequisites
 
@@ -62,7 +62,7 @@ docker compose up -d
 
 or the `start services.bat`
 
-## Setup Continue.dev (Visual Studio Code Extension)
+## Optional - Setup Continue.dev (Visual Studio Code Extension)
 
 Install the Continue.dev Visual Studio Code extension: <https://marketplace.visualstudio.com/items?itemName=Continue.continue>
 When opening the Continue view, click on the settings button on the lower right. A config.json should open. There, make sure that there is this paragraph (models are empty on start):
