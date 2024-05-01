@@ -1,0 +1,7 @@
+[wsl2]
+ 
+memory=20GB
+swap=64GB
+
+[experimental]
+autoMemoryReclaim=dropcache
