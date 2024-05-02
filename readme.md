@@ -103,6 +103,10 @@ If you want to clear your RAM/memory in-between, you can execute the clear-wsl b
 For the most users, the `clear-wsl-ram-from-docker-itself.bat` is the correct one as you don't need to use any other wsl distribution for it. 
 For some power users, it might be interesting to clear the cache for the other running distro as well which is why the other script exists.
 
+## Other recommendations
+
+I can definitely recommend the Harpa AI Browser extension. It has a free plan that allows people to connect to local LLMs like the ones hosted with Ollama. For this, just add a new local api key connection and as api base, use `localhost:11434`
+
 ## Disclaimer
 
 It is incumbent upon each individual to ensure that the tools and models employed are appropriately licensed for the intended use cases. This technical guide is provided without any guarantees or warranties.
